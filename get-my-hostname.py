@@ -1,3 +1,5 @@
+import socket
+
 # To get the hostname
 hostname = socket.gethostname()
 

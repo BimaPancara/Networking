@@ -7,7 +7,7 @@ net4 = ipaddress.ip_network('192.168.0.0/24')
 for ip in net4.hosts():
     ip_add = print(f"IP Address = {ip}")
     ip_in_str = str(ip)
-    send_ping = os.popen(f'ping -c 4 {ip}')
+    send_ping = os.popen(f'ping {ip}')
     send_ping
     if("Request timed out." or "unreachable") in send_ping:
 	    print("Unreachable")
@@ -16,7 +16,7 @@ for ip in net4.hosts():
             name = socket.gethostbyaddr(ip_in_str)
             print(name)
         except:
-            pass
+            print("Error")
     #name = socket.gethostbyaddr(ip)
     #print(f"Name of Device = {name}")
     #print(f"name = {name}")
